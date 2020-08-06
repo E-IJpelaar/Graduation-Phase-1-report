@@ -1,0 +1,51 @@
+Over the past years soft robots have been a growing field of interest, as they have the potential to safely perform complex tasks in a human-centred environment. 
+Besides executing tasks safely, the robot is demanded to be robust. Safety and robustness can be combined in the robotics design by considering material properties, locomotion, and morphology found in living organisms. Examples of bio-inspired soft robots include emulated trunks \cite{hannan2003kinematics} inspired by the proboscis of an elephant, robots based on the arm of octopus \cite{wang2013visual}, or robots that replicate the movement of fish \cite{marchese2014autonomous}. These robots are created from soft and flexible materials, which ensures safe interaction with humans. However, do have the necessary properties to grasp and pick-up objects. This flexibility theoretically gives the robot an infinite amount of degrees-of-freedom (DOFs). The robots redundancy gives rise to some advantages and challenges. One major advantage is that the robot can take multiple configurations to reach the same end-effector position. Additionally, it enables the robot to grasp objects around obstacles more easily compared to rigid robots. On the contrary, the infinite DOFs makes controlling the system more difficult as the robot is highly under-actuated.
+
+
+The main difference between soft robots and the well-known rigid robots is the robots' compliance \cite{trivedi2008soft}. Rigid robots generally consist of multiple rigid links that have servo or linear actuators inside the joints. Each of this joint controls an additional DOF. When a robot has more that 6 controllable DOFs the robot is called redundant. Opposed to rigid robots, bio-inspired robots do not necessarily have these links and are therefore called continuum robots. Due to there continuous morphology, these robots are redundant. Bio-inspired continuum robots can be classified into two categories namely, hard continuum robots and soft continuum robots. Hard continuum robots, such as the elephant trunk's robot  \cite{cieslak1999elephant}, consist of eight elastic segments linked together by coil springs. Each segment has two pairs of strings that can control the movement of each individual segment. Servo or linear actuators can be use to wind an unwind the strings with that controlling the movement of the robot, these are so called tendon-driven robots. Soft robots are generally composed of materials which strength is close to those of biological materials such as, muscles, skin, cartilage and have a Young's modulus of around 1 gigapascal \cite{rus2015design}. Soft robots are generally pneumatically actuated, an example is the Bionic Handling Assistant (BHA) \cite{rolf2012constant}. By inflating chambers this robot is able to extend and bend. Soft robots are in general highly dexterous, which enables them grasp objects around obstacles. There are multiple challenges with regards to controlling soft robots. Due to their inherently flexible nature, picking up loads causes the robot's tip to drop under the influence of gravity. This makes position sensing more difficult when compared to a rigid manipulator, where forward kinematics can be easily formulated. Additionally, due to under-actuation, multiple positions with the same end-effector position are possible. Making the robot configuration for a given end-effector position non-unique.
+
+Thuruthel et al.(2018) \cite{george2018control} present an overview of soft robotic control for pneumatic actuated and tendon-driven soft robots. Here, three control approaches can be distinguished, namely, model-free, hybrid and model-based control. For each control approach, a sub-division between kinematic and dynamical control is made. Here kinematic control is defined as a zero order input output relation. A change in input is directly observed in output, therefore this approach is lower-level compared to dynamical control. For the latter, the configuration space and/or task space variables velocities are used in the control algorithm. Model-free
+control does not use a dynamical model in its control approach, here some sort of learning algorithm is used to control the robot. This is the case for the work presented in \cite{rolf2013efficient}, here goal babbling is used to control the BHA as mentioned previously \cite{rolf2012constant}. The goal of this control approach is to learn an inverse model, instead of feeding an inverse model directly to the algorithm. An inverse model is taught by using an exploring action, observing its outcomes and use the gathered data as a learning step. In \cite{reinhart2017hybrid} a hybrid type of controller for the BHA was proposed. Here a calculated inverse kinematic model is used together with a learning model. Previously, a model-based controller was used to control the BHA \cite{mahl2014bhakin}. This controller used only a kinematic description of the soft robot. This example illustrates that for the same robot configuration, different control strategies can be applied. For the BHA, mainly kinematic control was used. However, there are also control approaches for soft robots that are based on dynamical models. 
+
+\todo{the BHA has been illustrated enough, maybe some other examples that used model-free and model based control approaches. Octupus arm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%However, classic rigid robots still outperform the soft robots, in terms of accuracy, reputability, and speed. Soft robots theoretically have an infinite amount of degrees of freedom (DOF). However, the amount of actuators is limited. Hence, soft robots belong to the class of under actuated mechanical systems. This under actuation enables soft robots to reach a point in space in multiple ways, and grasp objects around obstacles. (cite de paper met figuren van soft robots die om een paal moeten grijpen) However, controlling under actuated systems has proven to be more difficult compared to fully actuated systems, where each degree of freedom is constrained by an actuator (bron). In this graduation project, we aim to improve the performance of a soft robot, by introducing an energy based control strategy. Our goal is to design a tracking controller, which is capable of pick and place tasks. This energy based control approach has, as far as we are concerned, not been applied in the field of soft robotics yet. This report has the following build up. First, recent research on dynamic modeling and control of soft robots will be presented. Then, conducted research on classic rigid robotics is shown. Here, we try to bridge the gap between control theory used for rigid robots and apply this theory to our soft robot. 
+
+%\todo{maybe change the "energy based method" to a "model-based" control strategy, to not put the focus on one strategy directly and keep other options open}
+
+
+
+%Several papers have been published on the control of soft robots, however most of them focus on inverse kinematic control. In \cite{reinhart2016hybrid}, inverse kinematic control of the Bionic Handling Assistant (BHA) designed by Festo is presented. This robot is pneumatically actuated and shows a lot of resemblances with the robot in the DC lab. The paper shows that feed-forward control based on inversion of a hybrid forward model. This hybrid model consists of two parts, an inverse kinematic part and a machine learning part. A constant curvature approach was used to model the robot, as presented in \cite{rolf2012constant}. Two learning algorithm are used: Linear Model and Extreme Learning Machine. In an earlier paper (\cite{queisser2014active}), an inverted equilibrium model of the same BHA was presented. These papers only propose kinematic control of the soft robot, whereas our aim is to develop a dynamic control algorithm. 
+
+%\todo{other paper with learning control}
+
+
+%Instead of using a learning element, visual based types of control have been control. Again, the control is based upon an inverse kinematic model. In  \cite{wang2013visual}, a cable-driven soft robotic manipulator is presented. This manipulator has a tentacle like shape, as its diameter decreases when moving away from its earths connection point. In total 4-cables are present inside the robots soft material, which can be used to control the manipulator. A piece wise constant curvature model is used to describe the kinematics of the manipulator, following the theory of (citeer een paper over CC model). A camera is fixed at the tip of the manipulator and a feature point is is fixed in 3D space around the robot. The camera is used to obtain a depth independent (2D) image Jacobian matrix. For controlling the system this depth-independent image Jacobian matrix, a PD-controller and gravity compensation is used to move the robot to its desired final position. This is done, by constantly estimating the depth-independent image Jacobian matrix. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

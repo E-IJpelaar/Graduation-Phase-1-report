@@ -1,0 +1,53 @@
+\documentclass[10pt,a4paper]{article}
+%--------------------
+% Load all pacakges in the UsePackages.sty file
+\usepackage{UsePackages}
+
+
+\begin{document}
+
+\section*{Progress Report}
+\input{ProgressReport.tex}
+\cleardoublepage
+
+
+\import{./}{title.tex}
+
+
+
+
+%\tableofcontents
+%\cleardoublepage
+
+
+
+%--------------------
+% HOOFDTEKST 
+
+
+\section{General Introduction}
+\input{MainText/General Introduction.tex}
+\cleardoublepage
+
+\section{Objective and Thesis Outline}
+\input{MainText/ObjectiveThesisOutline.tex}
+\cleardoublepage
+
+
+\section{Graduation Planning}
+\input{MainText/Project Planning.tex}
+\cleardoublepage
+
+
+
+\newpage
+\bibliography{bibliography}
+\bibliographystyle{unsrt}
+
+\cleardoublepage
+
+
+
+
+
+\end{document}
