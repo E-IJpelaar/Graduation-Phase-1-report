@@ -1,31 +1,30 @@
-Recent developments in control of soft robots have manly put its focus on kinematic, model-free or a combination of both. Ther
-
-
-With this master thesis, 
-
-
-\textit{Design, develop and optimize a model based control strategy for a multi-link soft robot to perform a reference tracking problem}
+Recent literature shows that control of soft robots has mainly focused on kinematic, model-free or a hybrid control strategy. Although there are studies that use dynamical models \cite{della2020model}, a lot of research in this field is left undone. With this master thesis we aim to find an model-based control strategy that results in improved tracking performance of the soft robot. Hence, the research objective follows:
 
 
 
+\textit{Design, develop and optimize a model-based control strategy for a multi-link soft robot to perform a reference tracking problem}
+
+
+To effectively answer the research objective we might consider previous research on under-actuated classic robots, and try to apply these methods to soft robots. As mentioned, soft robots are highly under-actuated,
+
+
+In \cite{spong1994linear}, non-linear partial feedback linearization is discussed. The mechanical system is described in generalized coordinates, and divided in actuated and un-actuated degrees of freedom. The theory presented, shows that under "strong inertial coupling" the actuated joints can linearize the un-actuated degrees of freedom. 
+
+Energy based control \cite{spong1996energy} is another approach to control the under-actuated mechanical system. In essence, nonlinear partial feedback linearization is used, together with energy shaping. For the system an energy function is determined, enabling to calculate the total energy at a given point. By using multiple controllers and switching between those, under-actuated systems can stabilize around their desired end-effector position. 
+
+Another control method is backstepping \cite{khalil2002nonlinear}. This control approach transforms the system to a new recursive form, where a sequence of "virtual" systems is created. By selecting the "virtual" input, the system can be made globally asymptotically stable. Backstepping has been previously used for under-actuated systems such as \cite{madani2006backstepping}.
+
+
+Instead of feedback linearization techniques, sliding mode control (SMC) can be used to control under-actuated systems. SMC can be an effective tool in controller design, as it is insensitive to model errors and external disturbances. Reason for this is that the behaviour on the sliding mode depends only on the defined switching surface, not the structural properties of the system \cite{liu2013survey}. In \cite{xu2008sliding} a theory is presented to globally stabilize all degrees of freedom, including the non-linearly coupled indirectly actuated degrees of freedom for a system in cascaded form. By defining a sliding surface, the un-actuated degrees of freedom can be stabilized, and the actuated degrees of freedom controlled.
+
+
+In \cite{liu2013survey}, the theory of fuzzy control for under-actuated systems is presented. This control strategy is used to mimic human logic and can therefore deal with imprecise, uncertain or qualitative decision-making situations. Although it is considered a non-mathematical control strategy to control system where model making is difficult \cite{michels2007fuzzy}, plenty of model-based fuzzy controllers have been designed e.g. \cite{begovich2002takagi}, \cite{tao2008design}. 
+
+
+Above mentioned research has been carried out on classic under-actuated mechanical systems, however are still relevant for the control of soft robots as it has infinite degrees of freedom. Since a model-based controller is desired, the focus will initially be at designing an energy-based controller. 
+
+
+\todo{nog meer een link leggen met hoe deze theorie toepasbaar is op "onze" soft robot}
 
 
 
-
-
-
-\todo{here the different control techniques applied to classic under-actuated systems need to be described and should briefly related to our system}
-
-\hl{Papers to talk about:}
-
-\begin{itemize}
-
-    \item Energy based control of a class of under-actuated systems \cite{spong1996energy}
-    \item Partial feedback linearization of under-actuated mechanical systems \cite{spong1994linear}
-    \item Sliding mode control of a class of under-actuated systems \cite{xu2008sliding}
-    \item Hybrid Control for a Class of under-actuated Mechanical Systems \cite{fierro1999hybrid}. Used computed torque control
-    \item Control of under-actuated robot manipulators using switching
-    computed torque method: GA based approach \cite{udawatta2003control}.  Possibility to change the GA based approach with a fuzzy logic controller \cite{udawatta2003controlfuzzy}
-    \item Survey presents the current control strategies for under-actuated systems \cite{liu2013survey} : Partial feedback linearisation, Energy-based methods, Sliding mode control, Fuzzy control, and Optimal control (energy-optimal and time-optimal optimisation)
-
-\end{itemize}
