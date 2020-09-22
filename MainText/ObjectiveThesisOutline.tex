@@ -1,4 +1,4 @@
-Recent literature shows that model-based, model-free and hybrid control strategies have been used to control soft robots. However, the developed model-based control algorithms predominantly used kinematic descriptions of the robots, rather than dynamical models. Although there are studies that use dynamical models  \cite{falkenhahn2016dynamic}, \cite{della2020model}, and \cite{kapadia2011task}, the field of model-based control is still under-developed as of today. In this work we aim to find an model-based control strategy that will generally result in higher tracking performance of the soft robot. Hence, the research questions follows:
+Recent literature shows that model-based, model-free and hybrid control strategies have been used to control soft robots. However, the developed model-based control algorithms predominantly used kinematic descriptions of the robots, rather than dynamical models. Although there are studies that use dynamical models  \cite{falkenhahn2016dynamic}, \cite{della2020model}, and \cite{kapadia2011task}, the field of model-based control applied to soft robots is still under-developed as of today. In this work we aim to find an model-based control strategy that will generally result in higher tracking performance of the soft robot. Hence, the research questions follows:
 
 
 
@@ -9,19 +9,19 @@ Recent literature shows that model-based, model-free and hybrid control strategi
 
 \begin{figure}[H]
     \centering
-    \includegraphics{Figures/sorotoki1.png}
+    \includegraphics[width = 0.5\textwidth]{Figures/sorotoki1.png}
     \caption{Computer image of the soft robot used in this project.}
     \label{fig:sorotoki}
 \end{figure}
 
 
-To effectively answer the research questions we might consider previous research on under-actuated classic robots, and try to apply these methods to soft robots.
+To effectively answer the research question we might consider previous research on under-actuated classic robots, and try to apply these methods to soft robots.
 
-Sliding mode control (SMC) can be used to control under-actuated systems. SMC can be an effective tool in controller design, as it is insensitive to model errors and external disturbances. The cause of this phenomenon is that the behaviour on the sliding mode depends only on the defined switching surface, not the structural properties of the system \cite{liu2013survey}. In \cite{xu2008sliding} a theory is presented to globally stabilize all degrees of freedom, including the non-linearly coupled, indirectly actuated degrees of freedom for a system in cascaded form. By defining a sliding surface, the un-actuated degrees of freedom can be stabilized, and the actuated degrees of freedom controlled.
+Sliding mode control (SMC) can be used to control under-actuated systems. SMC can be an effective tool in controller design, as it is insensitive to model errors and external disturbances. The cause of this phenomenon is that the behaviour on the sliding mode depends only on the defined switching surface, not the structural properties of the system \cite{liu2013survey}. In \cite{xu2008sliding}, a theory is presented to globally stabilize all degrees of freedom, including the non-linearly coupled, indirectly actuated degrees of freedom for a system in cascaded form. By defining a sliding surface, the un-actuated degrees of freedom can be stabilized, and the actuated degrees of freedom controlled.
 
-In \cite{liu2013survey}, the theory of fuzzy control for under-actuated systems is presented. This control strategy is used to mimic human logic and can therefore deal with imprecise, uncertain or qualitative decision-making situations. This control strategy is used to control mechanical systems for which model making is difficult \cite{michels2007fuzzy}, plenty of model-based fuzzy controllers have been designed e.g. \cite{begovich2002takagi} and \cite{tao2008design}. 
+In \cite{liu2013survey}, the theory of fuzzy control for under-actuated systems is presented. This control strategy is used to mimic human logic and can therefore deal with imprecise, uncertain or qualitative decision-making situations. This control strategy is used to control mechanical systems for which model making is difficult \cite{michels2007fuzzy}, plenty of model-based fuzzy controllers have been designed, e.g. \cite{begovich2002takagi} and \cite{tao2008design}. 
 
-Instead of SMC and fuzzy control, backstepping \cite{khalil2002nonlinear} can be used to control the system. This control approach transforms the system to a new recursive form, where a sequence of "virtual" systems is created. By selecting the "virtual" input, the system can be made globally asymptotically stable. Backstepping has been previously used for under-actuated systems such as \cite{madani2006backstepping}.
+Instead of SMC and fuzzy control, backstepping \cite{khalil2002nonlinear} can be used to control the system. This control approach transforms the system to a new recursive form, where a sequence of "virtual" systems is created. By selecting the "virtual" input, the system can be made globally asymptotically stable. Backstepping has been previously used for under-actuated systems such as in \cite{madani2006backstepping}.
 
 In \cite{spong1994linear}, non-linear partial feedback linearization is discussed. The mechanical system is described in generalized coordinates, and divided in actuated and un-actuated degrees of freedom. The theory presented, shows that under "strong inertial coupling" the actuated joints can linearize the un-actuated degrees of freedom. 
 
