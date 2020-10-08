@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[12pt,twoside]{report}
 %--------------------
 % Load all pacakges in the UsePackages.sty file
 \usepackage{UsePackages}
@@ -6,45 +6,40 @@
 
 \begin{document}
 
-%\section*{Progress Report}
-%\input{ProgressReport.tex}
+
+\input{TitlePage/title.tex}
+\thispagestyle{empty}
 %\cleardoublepage
 
 
-\import{./}{title.tex}
-
-
-
-
-%\tableofcontents
-%\cleardoublepage
-
-
+\pagenumbering{roman}
 
 %--------------------
 % HOOFDTEKST 
 
 
-\section{General Introduction}
-\input{MainText/General Introduction.tex}
-\cleardoublepage
-
-\section{Objective and Thesis Outline}
-\input{MainText/ObjectiveThesisOutline.tex}
-\cleardoublepage
+\pagenumbering{arabic}
 
 
-\section{Graduation Planning}
-\input{MainText/Project Planning.tex}
-\cleardoublepage
+\chapter{Introduction}
+\input{Chapter/Ch1_Introduction}
+
+
+\chapter{Literature Review}
+\input{Chapter/Ch2_LiteratureReview}
+
+
+\chapter{Problem Formulation \& Approach}
+\input{Chapter/Ch3_ThesisOutline}
+
+\chapter{Time Planning}
+\input{Chapter/Ch4_TimePlanning}
 
 
 
 \newpage
 \bibliography{bibliography}
 \bibliographystyle{unsrt}
-\cleardoublepage
-
 
 
 
